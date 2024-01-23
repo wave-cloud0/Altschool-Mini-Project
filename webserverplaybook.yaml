@@ -1,0 +1,22 @@
+---
+- name: Configure Timezone, Install Nginx, and Display Hostname
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Set Timezone to Africa/Lagos
+      timezone:
+        name: Africa/Lagos
+
+    - name: Install Nginx
+      package:
+        name: nginx
+        state: present
+
+    - name: Display Hostname on Default Nginx Page
+      shell: echo "<h1>welcome to $(hostname) server</h1>" | sudo tee /var/www/html/index.html
+
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
