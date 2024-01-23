@@ -21,9 +21,7 @@
 
 - While rotating between the servers as your refresh to display their unique content.
 
-- Submit both the Ansible and Terraform files created.
-
-
 
 ##  DELIVERABLES:
 
+- Submit both the Ansible and Terraform files created.
